@@ -1,0 +1,46 @@
+{
+    "$jsonSchema": {
+        "title": "driver",
+        "description": "A driver that delivers orders.",
+        "bsonType": "object",
+        "required": [
+            "_id",
+            "firstName",
+            "lastName",
+            "deliveries"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "firstName": {
+                "bsonType": "string"
+            },
+            "lastName": {
+                "bsonType": "string"
+            },
+            "deliveries": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "required": [
+                        "deliveryId",
+                        "orderId",
+                        "orderTime"
+                    ],
+                    "properties": {
+                        "deliveryId": {
+                            "bsonType": "objectId"
+                        },
+                        "orderId": {
+                            "bsonType": "objectId"
+                        },
+                        "orderTime": {
+                            "bsonType": "date"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

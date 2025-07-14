@@ -1,0 +1,68 @@
+{
+  "$jsonSchema": {
+    "title": "order",
+    "description": "An order for one or more pizzas.",
+    "bsonType": "object",
+    "required": [
+      "_id",
+      "orderTime",
+      "isDelivery",
+      "isOnline",
+      "pizzas"
+    ],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "orderTime": {
+        "bsonType": "date"
+      },
+      "isDelivery": {
+        "bsonType": "bool"
+      },
+      "isOnline": {
+        "bsonType": "bool"
+      },
+      "pizzas": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": [
+            "size",
+            "toppings"
+          ],
+          "properties": {
+            "size": {
+              "bsonType": "string",
+              "enum": ["small", "medium", "large"]
+            },
+            "toppings": {
+              "bsonType": "array",
+              "items": {
+                "bsonType": "object",
+                "required": [
+                  "region",
+                  "amount",
+                  "ingredient"
+                ],
+                "properties": {
+                  "region": {
+                    "bsonType": "string",
+                    "enum": ["whole", "left", "right"]
+                  },
+                  "amount": {
+                    "bsonType": "string",
+                    "enum": ["regular", "light", "extra"]
+                  },
+                  "ingredient": {
+                    "bsonType": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

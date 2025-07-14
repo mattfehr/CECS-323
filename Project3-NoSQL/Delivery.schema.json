@@ -1,0 +1,71 @@
+{
+    "$jsonSchema": {
+        "title": "delivery",
+        "description": "A delivery of an order.",
+        "bsonType": "object",
+        "required": [
+            "_id",
+            "order",
+            "streetAddress",
+            "city",
+            "state",
+            "zipCode",
+            "driver"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "order": {
+                "bsonType": "object",
+                "required": [
+                    "orderId",
+                    "orderTime",
+                    "pizzaCount"
+                ],
+                "properties": {
+                    "orderId": {
+                        "bsonType": "objectId"
+                    },
+                    "orderTime": {
+                        "bsonType": "date"
+                    },
+                    "pizzaCount": {
+                        "bsonType": "int"
+                    }
+                }
+            },
+            "streetAddress": {
+                "bsonType": "string"
+            },
+            "city": {
+                "bsonType": "string"
+            },
+            "state": {
+                "bsonType": "string"
+            },
+            "zipCode": {
+                "bsonType": "string"
+            },
+            "driver": {
+                "bsonType": "object",
+                "required": [
+                    "_id",
+                    "firstName",
+                    "lastName"
+                ],
+                "properties": {
+                    "_id": {
+                        "bsonType": "objectId"
+                    },
+                    "firstName": {
+                        "bsonType": "string"
+                    },
+                    "lastName": {
+                        "bsonType": "string"
+                    }
+                }
+            }
+        }
+    }
+}

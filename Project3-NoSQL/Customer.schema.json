@@ -1,0 +1,50 @@
+{
+    "$jsonSchema": {
+        "title": "Customer",
+        "description": "An individual that places pizza orders.",
+        "bsonType": "object",
+        "required": [
+            "_id",
+            "firstName",
+            "lastName",
+            "phoneNumber",
+            "orders"
+        ],
+        "properties": {
+            "_id": {
+                "bsonType": "objectId"
+            },
+            "firstName": {
+                "bsonType": "string"
+            },
+            "lastName": {
+                "bsonType": "string"
+            },
+            "phoneNumber": {
+                "bsonType": "string"
+            },
+            "orders": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "required": [
+                        "_id",
+                        "orderTime",
+                        "isDelivery"
+                    ],
+                    "properties": {
+                        "_id": {
+                            "bsonType": "objectId"
+                        },
+                        "orderTime": {
+                            "bsonType": "date"
+                        },
+                        "isDelivery": {
+                            "bsonType": "bool"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
